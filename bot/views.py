@@ -25,7 +25,7 @@ class Bot(View):
         update: Update = Update.de_json(data,BOT)
         
         dispatcher.add_handler(CommandHandler("start",start))
-        dispatcher.add_handler(CallbackQueryHandler(candidate,pattern="Ha"))
+        dispatcher.add_handler(CallbackQueryHandler(candidate))
         
         dispatcher.process_update(update)
         
