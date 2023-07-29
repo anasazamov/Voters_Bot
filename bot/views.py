@@ -12,9 +12,9 @@ import os
 TOKEN = os.environ["TOKEN"]
 BOT = Bot(TOKEN)
 
-class Bot(View):
+class BotView(View):
     
-    def get(request: HttpRequest):
+    def get(request: HttpRequest,id):
         
         return JsonResponse({"status":200})
     
@@ -25,7 +25,7 @@ class Bot(View):
         update: Update = Update.de_json(data,BOT)
         
         dispatcher.add_handler(CommandHandler("start",start))
-        dispatcher.add_handler(CallbackQueryHandler(candidate))
+        dispatcher.add_handler(CallbackQueryHandler(candidate_func))
         
         dispatcher.process_update(update)
         
