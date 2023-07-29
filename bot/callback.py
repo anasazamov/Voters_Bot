@@ -1,6 +1,6 @@
 from telegram import Update, InlineKeyboardButton,ReplyKeyboardMarkup,InlineKeyboardMarkup
 from telegram.ext import CallbackContext
-from models import Voters, Candidates
+from .models import Voters, Candidates
 
 def start(update: Update, context: CallbackContext):
     
