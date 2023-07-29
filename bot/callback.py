@@ -1,4 +1,4 @@
-from telegram import Update, InlineKeyboardButton,ReplyKeyboardMarkup
+from telegram import Update, InlineKeyboardButton,ReplyKeyboardMarkup,InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from .models import Voters, Candidates
 
@@ -10,7 +10,7 @@ def start(update: Update, context: CallbackContext):
             voter.chat_id = update.message.chat_id
             voter.first_start = False
             btn = InlineKeyboardButton("Ha")
-            reply_markup = ReplyKeyboardMarkup([[btn]],resize_keyboard=True)
+            reply_markup = InlineKeyboardMarkup([[btn]])
             update.message.reply_html("Ovoz berishiga tayyormisiz",reply_markup=reply_markup)
         else:
             update.message.reply_html("Ovoz berishni boshlagansiz")
@@ -27,7 +27,7 @@ def candidate(update: Update, context: CallbackContext):
         for i in condidate:
             btn1 = InlineKeyboardButton("Ha",callback_data=f'{i.pk}:yes')
             btn2 = InlineKeyboardButton("Yo'q",callback_data=f'{i.pk}:no')
-            reply_markup = ReplyKeyboardMarkup([[btn1,btn2]])
+            reply_markup = InlineKeyboardMarkup([[btn1,btn2]])
             
             update.message.reply_html(f"<b>Ismi:<b>{i.first_name}<br><b>Familyasi:<b>{i.last_name}<br><b>Lavozimi:<b>{i.position}<br><b>Kafedra:<b>{i.department}<br>",reply_markup=reply_markup)
             
