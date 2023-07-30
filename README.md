@@ -25,21 +25,19 @@ Voter:
 | Position   | str  | Job position                    |
 | dapartment | str  | Department of the place of work |
 
-
 Candidates:
 
-| name       | type | description                     |
-| ---------- | ---- | ------------------------------- |
-| id         | int  | primary key                     |
-| username   | str  | unique telegram username        |
-| first_name | str  | User first name                 |
-| last_name  | str  | User last name                  |
-| Position   | str  | Job position                    |
-| dapartment | str  | Department of the place of work |
-| voter      | Voter| Associated with the voter table |
+| name       | type  | description                     |
+| ---------- | ----- | ------------------------------- |
+| id         | int   | primary key                     |
+| username   | str   | unique telegram username        |
+| first_name | str   | User first name                 |
+| last_name  | str   | User last name                  |
+| Position   | str   | Job position                    |
+| dapartment | str   | Department of the place of work |
+| voter      | Voter | Associated with the voter table |
 
-
-##Libraries used
+## Libraries used
 
 - Django
 - python-telegram-bot
