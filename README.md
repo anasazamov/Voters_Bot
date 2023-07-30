@@ -36,6 +36,8 @@ Candidates:
 | Position   | str   | Job position                    |
 | dapartment | str   | Department of the place of work |
 | voter      | Voter | Associated with the voter table |
+| yes        | int   | the number of yes votes         |
+| no         | int   | the number of yes votes         |
 
 ## Libraries used
 
