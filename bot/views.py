@@ -21,7 +21,7 @@ class BotView(View):
     def post(request:HttpRequest):
         
         data = loads(request.body.decode())
-        dispatcher = Dispatcher(BOT,None,0)
+        dispatcher = Dispatcher(BOT,None,4)
         update: Update = Update.de_json(data,BOT)
         
         dispatcher.add_handler(CommandHandler("start",start))
